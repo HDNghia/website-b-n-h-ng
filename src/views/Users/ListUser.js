@@ -13,38 +13,47 @@ class ListUser extends React.Component {
         //     .then(res => {
         //         console.log('>>> check res: ', res.data.data)
         //     })
-
-        let res = await axios.get('https://reqres.in/api/users?page=1')
+        let res = await axios.get('http://localhost:8080/api/v1/users')
         this.setState({
             ListUsers: res && res.data && res.data.data ? res.data.data : []
         })
+
     }
     handleViewDetailUser = (user) => {
         this.props.history.push(`/user/${user.id}`)
     }
 
     render() {
+
         let { ListUsers } = this.state;
         return (
             <div className="list-user-container">
                 <div className="title">
                     fetch all list users
                 </div>
-                <div className="list-user-content">
+
+                <table>
+                    <tr>
+                        <th>stt</th>
+                        <th>Firstname</th>
+                        <th>Lastname</th>
+                    </tr>
                     {ListUsers && ListUsers.length > 0 &&
                         ListUsers.map((item, index) => {
                             return (
-                                <div className="child" key={item.id}
+
+                                <tr className="child" key={item.id}
                                     onClick={() => this.handleViewDetailUser(item)}
                                 >
-                                    {index + 1} - {item.first_name} {item.last_name}
-                                </div>
+                                    <td>{index + 1}</td>
+                                    <td>{item.firstName}</td>
+                                    <td>{item.lastName}</td>
+                                </tr>
+
                             )
                         })
                     }
-
-                </div>
-
+                </table>
             </div>
         )
     }
