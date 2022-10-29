@@ -33,7 +33,7 @@ function Adduser(props) {
     const handleAddNewUser = () => {
         let isValid = checkValideInput();
         if (isValid === true) {
-            props.createNewUser(state, 'abc');
+            props.createNewUser(state);
             console.log("data modal: ", state);
         }
     }
