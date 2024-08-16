@@ -6,6 +6,9 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Nav from './Nav/Nav';
 import Home from './Example/Home';
+import Register from './Users/Register';
+import Login from './Users/Login';
+import Profile from './Users/Profile';
 import ListUser from './Users/ListUser';
 import DetaiUser from './Users/DetailUser';
 import {
@@ -18,10 +21,9 @@ const App = () => {
   return (
     <Router>
       <div className="App">
-
         <header className="App-header">
           <Nav />
-          <img src={logo} className="App-logo" alt="logo" />
+          {/* <img src={logo} className="App-logo" alt="logo" />
 
           <a
             className="App-link"
@@ -30,10 +32,16 @@ const App = () => {
             rel="noopener noreferrer"
           >
 
-          </a>
+          </a> */}
           <Switch>
             <Route path="/" exact>
-              <Home />
+              <Register />
+            </Route>
+            <Route path="/login" exact>
+              <Login />
+            </Route>
+            <Route path="/profile" exact>
+              <Profile />
             </Route>
             <Route path="/todo">
               <ListTodo />

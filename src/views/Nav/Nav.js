@@ -10,17 +10,20 @@ class Nav extends React.Component {
             <div>
                 <div className="topnav">
                     <NavLink to="/" activeClassName="active" exact={true}>
-                        Home
+                        Register
                     </NavLink>
-                    <NavLink to="/todo" activeClassName="active">
-                        Todos
+                    <NavLink to="/login" activeClassName="active">
+                        Login
                     </NavLink>
-                    <NavLink to="/about" activeClassName="active">
+                    <NavLink to="/profile" activeClassName="active">
+                        Profile
+                    </NavLink>
+                    {/* <NavLink to="/about" activeClassName="active">
                         About
                     </NavLink>
                     <NavLink to="/user" activeClassName="active">
                         User
-                    </NavLink>
+                    </NavLink> */}
 
                 </div>
             </div>
